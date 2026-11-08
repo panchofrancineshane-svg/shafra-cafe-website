@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Staff Login</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="login" data-page="login">
+        <div class="brand"><img src="images/shafralogo.png" alt="Shafra Cafe" /></div>
+        <div class="panel">
+            <form id="loginForm">
+                <h1>Staff Login</h1>
+                <label for="user">Username or email</label>
+                <input type="text" id="user" placeholder="you@shafracafe.com" autocomplete="username" />
+                <label for="pass">Password</label>
+                <input type="password" id="pass" placeholder="Password" autocomplete="current-password" />
+                <div class="row">
+                    <label>
+                        <input type="checkbox" id="keep" />
+                        Keep me signed in
+                    </label>
+                    <button type="button" class="link" id="forgot">Forgot Password?</button>
+                </div>
+                <button type="submit" class="btn-login">Log In</button>
+                <p class="error" id="err"></p>
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

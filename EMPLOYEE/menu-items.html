@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Menu Items</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="menu-items">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png"/>
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html" class="active">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Menu Items</h1>
+                <p class="sub">Current Menu</p>
+                <div class="panel-g">
+                    <div class="grid" id="grid"></div>
+                    <div class="addbox">
+                        <h3>Add New Item</h3>
+                        <div class="frm">
+                            <label>
+                                Name
+                                <input id="name" placeholder="e.g Iced Latte" />
+                            </label>
+                            <label>
+                                Category
+                                <select id="category">
+                                    <option>Coffee</option>
+                                    <option>Tea</option>
+                                    <option>Pastry</option>
+                                </select>
+                            </label>
+                            <label>
+                                Sub-Category
+                                <select id="subCategory">
+                                    <option>Milk</option>
+                                    <option>Non-Milk</option>
+                                    <option>Fruit</option>
+                                </select>
+                            </label>
+                            <label>
+                                Price
+                                <input id="price" type="number" min="0" placeholder="e.g 120" />
+                            </label>
+                            <label>
+                                Image
+                                <input id="image" type="file" accept="image/*" />
+                            </label>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.5rem">
+                            <button class="btn" id="add">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

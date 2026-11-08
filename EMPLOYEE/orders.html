@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Orders</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="orders">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png" />
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html" class="active">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Orders</h1>
+                <div class="stats">
+                    <div class="stat">
+                        <b>3</b>
+                        <span>Open Orders</span>
+                    </div>
+                    <div class="stat">
+                        <b>3</b>
+                        <span>Waiting for Pick-up</span>
+                    </div>
+                    <div class="stat">
+                        <b>12</b>
+                        <span>Total Orders Today</span>
+                    </div>
+                    <div class="stat">
+                        <b>&#8369;3350</b>
+                        <span>Sales Today</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <header>
+                        <h2>Live Orders Queue</h2>
+                        <div class="pills">
+                            <button class="on" data-f="All">All</button>
+                            <button data-f="Pick-up">Pick-up</button>
+                            <button data-f="Grab">Grab</button>
+                            <button data-f="FoodPanda">FoodPanda</button>
+                        </div>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4769</td>
+                                <td>JCGA</td>
+                                <td>1x Iced Latte</td>
+                                <td><span class="tag Grab">Grab</span></td>
+                                <td><span class="status">Preparing</span></td>
+                                <td>
+                                    <button class="act" onclick="location.href = 'qr-generator.html?order=4769'">
+                                        Generate QR
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4769</td>
+                                <td>JCGA</td>
+                                <td>1x Iced Latte</td>
+                                <td><span class="tag Pickup">Pick-up</span></td>
+                                <td><span class="status">Preparing</span></td>
+                                <td>
+                                    <select class="act done">
+                                        <option value="done" selected>Mark as Done</option>
+                                        <option value="drop">Mark as Dropped</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4769</td>
+                                <td>JCGA</td>
+                                <td>1x Iced Latte</td>
+                                <td><span class="tag FoodPanda">FoodPanda</span></td>
+                                <td><span class="status">Ready for Pick-up</span></td>
+                                <td>
+                                    <button class="act" onclick="location.href = 'qr-generator.html?order=4769'">
+                                        Generate QR
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4769</td>
+                                <td>JCGA</td>
+                                <td>1x Iced Latte</td>
+                                <td><span class="tag Pickup">Pick-up</span></td>
+                                <td><span class="status">Preparing</span></td>
+                                <td>
+                                    <select class="act drop">
+                                        <option value="done">Mark as Done</option>
+                                        <option value="drop" selected>Mark as Dropped</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
