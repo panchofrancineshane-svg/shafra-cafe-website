@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Hidden Menu Items</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="hidden-menu-items">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png"/>
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html" class="active">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Hidden Menu</h1>
+                <div class="card">
+                    <header>
+                        <h2>Exclusive Items</h2>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Items</th>
+                                <th>Category</th>
+                                <th>Bean Cost</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+                <div class="hid">
+                    <h2 style="font-size: 1.1rem; margin: 2rem 0 0.3rem">Add Hidden Menu Items</h2>
+                    <div class="frm">
+                        <label>
+                            Name
+                            <input id="name" placeholder="e.g. Shafra Special" />
+                        </label>
+                        <label>
+                            Category
+                            <select id="category">
+                                <option>Drinks</option>
+                                <option>Pastry</option>
+                            </select>
+                        </label>
+                        <label>
+                            Bean Cost
+                            <input id="beanCost" type="number" min="1" placeholder="e.g. 5 beans" />
+                        </label>
+                        <label>
+                            Image
+                            <input id="image" type="file" accept="image/*" />
+                        </label>
+                    </div>
+                    <button class="btn" id="add" style="margin-top: 0.8rem">Add Hidden Menu Item</button>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Sales Report</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="sales-report">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png"/>
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html" class="active">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Sales Report</h1>
+                <div>
+                    <button class="tog on" data-r="today">Today</button>
+                    <button class="tog" data-r="week">This Week</button>
+                </div>
+                <div class="stats3">
+                    <div class="stat">
+                        <b id="totalOrders">0</b>
+                        <span>Total Orders</span>
+                    </div>
+                    <div class="stat">
+                        <b id="totalRevenue">0</b>
+                        <span>Total Revenue</span>
+                    </div>
+                    <div class="stat">
+                        <b id="totalDropped">0</b>
+                        <span>Cancelled/Dropped</span>
+                    </div>
+                </div>
+                <div class="card sm">
+                    <header><h2>Order Log</h2></header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Order ID</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

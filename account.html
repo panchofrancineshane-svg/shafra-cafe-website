@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Shafra Cafe</title>
+  <meta name="description" content="Log in, view your orders and leave a review.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/account.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="beans.html">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      <a href="account.html" id="accountLink" class="nav-login active">Log in</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <h1>My account</h1>
+      <p>Log in to see your orders and rate them once they arrive.</p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- NOT LOGGED IN -->
+        <div id="authView" class="auth-card">
+          <p class="demo-note"><strong>Demo mode:</strong> accounts, orders and reviews are saved in this browser only.
+            Do not use a password you use elsewhere.</p>
+
+          <div class="auth-tabs">
+            <button type="button" id="tabLogin" class="active">Log in</button>
+            <button type="button" id="tabSignup">Sign up</button>
+          </div>
+
+          <form class="form" id="loginForm">
+            <div>
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+            <p class="form-message error" id="loginMessage" hidden></p>
+          </form>
+
+          <form class="form" id="signupForm" hidden>
+            <div>
+              <label for="signupName">Your name</label>
+              <input type="text" id="signupName" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="signupPassword">Password (at least 6 characters)</label>
+              <input type="password" id="signupPassword" autocomplete="new-password" minlength="6" required>
+            </div>
+            <div>
+              <label for="signupConfirm">Confirm password</label>
+              <input type="password" id="signupConfirm" autocomplete="new-password" required>
+            </div>
+            <button type="submit" class="btn">Create account</button>
+            <p class="form-message error" id="signupMessage" hidden></p>
+          </form>
+        </div>
+
+        <!-- LOGGED IN -->
+        <div id="memberView" hidden>
+          <div class="member-bar">
+            <div>
+              <p class="tagline">Welcome back</p>
+              <h2 id="memberName"></h2>
+            </div>
+            <button type="button" class="btn btn-outline" id="logoutBtn">Log out</button>
+          </div>
+
+          <div class="bean-summary" id="beanSummary"></div>
+          <div class="unlock-banner" id="unlockBanner" hidden></div>
+
+          <h2>Your orders</h2>
+          <div id="orders"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafe@gmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
+
+</body>
+</html>

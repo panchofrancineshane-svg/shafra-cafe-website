@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers | Shafra Cafe</title>
+  <meta name="description" content="Limited-time seasonal drinks, combos and promos at Shafra Cafe.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/menu-data.js" defer></script>
+  <script src="js/item-modal.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="offers.html" class="active">Offers</a></li>
+      <li><a href="beans.html">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      <a href="account.html" id="accountLink" class="nav-login">Log in</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. SEASONAL HEADER + COUNTDOWN -->
+    <section class="season-autumn">
+      <div class="container" style="text-align:center;">
+        <p class="tagline">Limited time only</p>
+        <h1 class="season-title">Autumn Specials</h1>
+        <p>Warm drinks for cooler days. Available until November 30.</p>
+
+        <div class="countdown" id="countdown" style="margin-top:28px;">
+          <div><span class="num" id="days">00</span><span class="label">Days</span></div>
+          <div><span class="num" id="hours">00</span><span class="label">Hours</span></div>
+          <div><span class="num" id="minutes">00</span><span class="label">Minutes</span></div>
+          <div><span class="num" id="seconds">00</span><span class="label">Seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CURRENT OFFERS -->
+    <section>
+      <div class="container">
+        <h2>Now serving</h2>
+        <div class="cards">
+
+          <article class="card" data-id="pumpkin-spice-latte" tabindex="0" role="button" aria-label="View details for Pumpkin Spice Latte">
+            <span class="ribbon">Limited time</span>
+            <div class="img-wrap"><img src="images/Autumn Drink.jfif" alt="Pumpkin spice latte"></div>
+            <div class="body">
+              <h3>Pumpkin Spice Latte</h3>
+              <p>Real pumpkin, warm spices and silky steamed milk.</p>
+              <p><span class="old-price">&#8369;175</span> <span class="price">&#8369;149</span></p>
+              <p class="until">Until Nov 30</p>
+              <span class="view-hint">Tap for details &amp; add to cart</span>
+            </div>
+          </article>
+
+          <article class="card" data-id="maple-cold-brew" tabindex="0" role="button" aria-label="View details for Maple Cold Brew">
+            <span class="ribbon new">New</span>
+            <div class="img-wrap"><img src="images/maple cold brew.jpg" alt="Maple cold brew over ice"></div>
+            <div class="body">
+              <h3>Maple Cold Brew</h3>
+              <p>Slow-steeped cold brew sweetened with maple syrup.</p>
+              <p class="price">&#8369;155</p>
+              <p class="until">Until Nov 30</p>
+              <span class="view-hint">Tap for details &amp; add to cart</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. COMBOS AND PROMOS -->
+    <section style="background:var(--foam);">
+      <div class="container">
+        <h2>Combos and promos</h2>
+        <div class="cards">
+          <div class="coupon" data-id="coffee-pastry-combo" tabindex="0" role="button" aria-label="View details for Coffee + Pastry Combo">
+            <p class="big">&#8369;199</p>
+            <h3>Coffee + Pastry</h3>
+            <p>Any regular coffee with a croissant of your choice.</p>
+            <span class="view-hint">Tap for details &amp; add to cart</span>
+          </div>
+          <div class="coupon">
+            <p class="big">10% off</p>
+            <h3>Student discount</h3>
+            <p>Show your school ID at the counter. Monday to Friday.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COMING SOON -->
+    <section>
+      <div class="container">
+        <h2>Coming soon</h2>
+        <div class="cards">
+          <article class="card coming-soon">
+            <div class="img-wrap"><img src="images/christmas.jpg" alt="A holiday drink coming soon"></div>
+            <div class="body">
+              <h3>Peppermint Mocha</h3>
+              <p>Arriving December 1.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Get offers first</h2>
+        <p>Join our list for seasonal drinks and special deals. No spam, just coffee.</p>
+        <form data-message="Thank you for subscribing!">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-message" hidden></p>
+      </div>
+    </section>
+
+
+    <!-- ITEM DETAILS POP-UP: filled in by js/item-modal.js -->
+    <dialog class="item-dialog" id="itemDialog" aria-labelledby="dlgName">
+      <button type="button" class="dialog-close" id="dlgClose" aria-label="Close">&times;</button>
+      <div class="dialog-img"><img id="dlgImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div>
+      <div class="dialog-body">
+        <p class="until" id="dlgBadge" hidden></p>
+        <h2 id="dlgName"></h2>
+        <p><span class="old-price" id="dlgOld" hidden></span><span class="price" id="dlgPrice"></span></p>
+        <p class="beans-line"><span class="bean-icon" aria-hidden="true"></span><span id="dlgBeans"></span></p>
+        <p id="dlgLong"></p>
+
+        <h3>Ingredients</h3>
+        <p id="dlgIngredients"></p>
+        <p class="allergens" id="dlgAllergens"></p>
+
+        <div id="dlgSizesWrap">
+          <h3>Choose a size</h3>
+          <div class="chips" id="dlgSizes"></div>
+        </div>
+
+        <div id="dlgAddonsWrap">
+          <h3>Add-ons</h3>
+          <div class="addon-list" id="dlgAddons"></div>
+        </div>
+
+        <div id="dlgNoteWrap">
+          <h3>Special requests</h3>
+          <textarea class="note" id="dlgNote" maxlength="140" aria-label="Special requests"></textarea>
+        </div>
+
+        <div class="dialog-footer">
+          <div class="qty" id="dlgQtyBox">
+            <button type="button" id="dlgMinus" aria-label="Decrease quantity">&minus;</button>
+            <span id="dlgQty">1</span>
+            <button type="button" id="dlgPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn" id="dlgAdd">Add to cart</button>
+        </div>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafe@gmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
+
+</body>
+</html>

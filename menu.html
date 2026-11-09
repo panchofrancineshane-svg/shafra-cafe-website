@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Shafra Cafe</title>
+  <meta name="description" content="Coffee, tea, pastries and meals made fresh daily at Shafra Cafe.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/menu-data.js" defer></script>
+  <script src="js/item-modal.js" defer></script>
+  <script src="js/secret-menu.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="beans.html">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      <a href="account.html" id="accountLink" class="nav-login">Log in</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Our Menu</h1>
+      <p>Made fresh, one cup at a time. Tap any item to see details and add it to your cart.</p>
+    </section>
+
+    <section style="padding-top:40px;">
+      <div class="container">
+
+        <!-- SEARCH + CATEGORY BUTTONS -->
+        <input type="search" id="menuSearch" class="search" placeholder="Search the menu..."
+          aria-label="Search the menu">
+
+        <div class="category-tabs">
+          <button class="active" data-filter="all">All</button>
+          <button class="offers-tab" data-filter="offers">&#9733; Offers</button>
+          <button data-filter="coffee">Coffee</button>
+          <button data-filter="tea">Tea</button>
+          <button data-filter="pastries">Pastries</button>
+          <button data-filter="meals">Meals</button>
+          <a href="#secret" class="secret-tab" id="secretTab" hidden>&#9733; Secret menu</a>
+        </div>
+
+        <!-- LIMITED OFFERS: always the first section of the menu -->
+        <div class="menu-category menu-offers" id="offers">
+          <span class="badge">Limited time</span>
+          <h2>Seasonal &amp; limited offers</h2>
+          <p class="offer-note">Available until November 30 &middot; <a href="offers.html">See all offers</a></p>
+          <div class="menu-list">
+            <div class="menu-item" data-category="offers" data-id="pumpkin-spice-latte" tabindex="0" role="button"
+              aria-label="View details for Pumpkin Spice Latte">
+              <img class="item-thumb" src="images/Autumn Drink.jfif" alt="Pumpkin Spice Latte" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Pumpkin Spice Latte <span class="tag limited">Limited time</span></h3>
+                  <span class="dots"></span>
+                  <span class="old-price">&#8369;175</span> <span class="price">&#8369;149</span>
+                </div>
+                <p>Real pumpkin, warm spices and silky steamed milk.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+15 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="offers" data-id="maple-cold-brew" tabindex="0" role="button"
+              aria-label="View details for Maple Cold Brew">
+              <img class="item-thumb" src="images/maple cold brew.jpg" alt="Maple Cold Brew" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Maple Cold Brew <span class="tag new">New</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;155</span>
+                </div>
+                <p>Slow-steeped cold brew sweetened with maple syrup.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+14 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="offers" data-id="coffee-pastry-combo" tabindex="0" role="button"
+              aria-label="View details for Coffee + Pastry Combo">
+              <img class="item-thumb" src="images/combo.jpg" alt="Coffee + Pastry Combo" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Coffee + Pastry Combo <span class="tag limited">Limited time</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;199</span>
+                </div>
+                <p>Any regular coffee with a croissant of your choice.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+18 beans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SECRET MENU: filled in by js/secret-menu.js, only after 5 successful orders in a row -->
+        <div class="secret-menu" id="secret" hidden>
+          <span class="badge">Secret menu unlocked</span>
+          <h2 id="secretTitle">Congratulations!</h2>
+          <p id="secretMessage"></p>
+          <p class="secret-balance"><span class="bean-icon" aria-hidden="true"></span>Your beans: <strong
+              id="secretBalance">0</strong> &middot; <a href="beans.html">How beans work</a></p>
+          <div class="menu-list" id="secretGrid"></div>
+        </div>
+        <div class="menu-category" id="coffee">
+          <h2>Coffee</h2>
+          <div class="menu-list">
+            <div class="menu-item" data-category="coffee" data-id="caramel-latte" tabindex="0" role="button"
+              aria-label="View details for Caramel Latte">
+              <img class="item-thumb" src="images/caramel latte.jpg" alt="Caramel Latte" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Caramel Latte </h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;145</span>
+                </div>
+                <p>Espresso, steamed milk and house-made caramel.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+12 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="coffee" data-id="oat-milk-flat-white" tabindex="0" role="button"
+              aria-label="View details for Oat Milk Flat White">
+              <img class="item-thumb" src="images/oat milk flat white.jpg" alt="Oat Milk Flat White" loading="lazy"
+                width="96" height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Oat Milk Flat White <span class="tag vegan">Vegan</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;155</span>
+                </div>
+                <p>Double espresso with silky steamed oat milk.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+12 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="coffee" data-id="americano" tabindex="0" role="button"
+              aria-label="View details for Americano">
+              <img class="item-thumb" src="images/americano.jfif" alt="Americano" loading="lazy" width="96" height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Americano </h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;110</span>
+                </div>
+                <p>Two shots of espresso with hot water.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+8 beans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-category" id="tea">
+          <h2>Tea</h2>
+          <div class="menu-list">
+            <div class="menu-item" data-category="tea" data-id="matcha-latte" tabindex="0" role="button"
+              aria-label="View details for Matcha Latte">
+              <img class="item-thumb" src="images/matcha latte.jpg" alt="Matcha Latte" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Matcha Latte <span class="tag vegan">Vegan option</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;160</span>
+                </div>
+                <p>Ceremonial-grade matcha whisked with your choice of milk.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+14 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="tea" data-id="chai-latte" tabindex="0" role="button"
+              aria-label="View details for Chai Latte">
+              <img class="item-thumb" src="images/chai latte.jpg" alt="Chai Latte" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Chai Latte <span class="tag spicy">Spicy</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;140</span>
+                </div>
+                <p>Black tea with warm spices and steamed milk.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+11 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="tea" data-id="chamomile-honey" tabindex="0" role="button"
+              aria-label="View details for Chamomile Honey">
+              <img class="item-thumb" src="images/chamomile honey.jpg" alt="Chamomile Honey" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Chamomile Honey </h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;120</span>
+                </div>
+                <p>Calming chamomile with a spoon of local honey.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+9 beans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-category" id="pastries">
+          <h2>Pastries</h2>
+          <div class="menu-list">
+            <div class="menu-item" data-category="pastries" data-id="butter-croissant" tabindex="0" role="button"
+              aria-label="View details for Butter Croissant">
+              <img class="item-thumb" src="images/butter croissant.jpg" alt="Butter Croissant" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Butter Croissant </h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;95</span>
+                </div>
+                <p>Flaky, golden and baked fresh every morning.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+7 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="pastries" data-id="almond-croissant" tabindex="0" role="button"
+              aria-label="View details for Almond Croissant">
+              <img class="item-thumb" src="images/almond croissant.jpg" alt="Almond Croissant" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Almond Croissant <span class="tag nuts">Contains nuts</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;110</span>
+                </div>
+                <p>Buttery croissant filled with almond cream.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+9 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="pastries" data-id="blueberry-muffin" tabindex="0" role="button"
+              aria-label="View details for Blueberry Muffin">
+              <img class="item-thumb" src="images/blueberry muffin.jpg" alt="Blueberry Muffin" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Blueberry Muffin </h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;90</span>
+                </div>
+                <p>Soft muffin packed with blueberries.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+7 beans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-category" id="meals">
+          <h2>Meals</h2>
+          <div class="menu-list">
+            <div class="menu-item" data-category="meals" data-id="avocado-toast" tabindex="0" role="button"
+              aria-label="View details for Avocado Toast">
+              <img class="item-thumb" src="images/avocado toast.jpg" alt="Avocado Toast" loading="lazy" width="96"
+                height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Avocado Toast <span class="tag spicy">Spicy</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;210</span>
+                </div>
+                <p>Sourdough, smashed avocado, chili flakes and a poached egg.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+20 beans</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-category="meals" data-id="chicken-pesto-panini" tabindex="0" role="button"
+              aria-label="View details for Chicken Pesto Panini">
+              <img class="item-thumb" src="images/chicken pesto panini.jpg" alt="Chicken Pesto Panini" loading="lazy"
+                width="96" height="96">
+              <div class="item-body">
+                <div class="row">
+                  <h3>Chicken Pesto Panini <span class="tag nuts">Contains nuts</span></h3>
+                  <span class="dots"></span>
+                  <span class="price">&#8369;240</span>
+                </div>
+                <p>Grilled chicken, basil pesto and mozzarella.</p>
+                <div class="item-foot">
+                  <span class="view-hint">Tap for details &amp; add to cart</span>
+                  <span class="beans-badge"><span class="bean-icon" aria-hidden="true"></span>+22 beans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p id="noResults" class="no-results" hidden>No items match your search. Try another word.</p>
+
+        <p style="margin-top:40px; font-size:.85rem; opacity:.7;">Please tell us about any allergies before ordering.
+          Prices include VAT.</p>
+
+      </div>
+    </section>
+
+    <!-- ITEM DETAILS POP-UP: filled in by js/item-modal.js -->
+    <dialog class="item-dialog" id="itemDialog" aria-labelledby="dlgName">
+      <button type="button" class="dialog-close" id="dlgClose" aria-label="Close">&times;</button>
+      <div class="dialog-img"><img id="dlgImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div>
+      <div class="dialog-body">
+        <p class="until" id="dlgBadge" hidden></p>
+        <h2 id="dlgName"></h2>
+        <p><span class="old-price" id="dlgOld" hidden></span><span class="price" id="dlgPrice"></span></p>
+        <p class="beans-line"><span class="bean-icon" aria-hidden="true"></span><span id="dlgBeans"></span></p>
+        <p id="dlgLong"></p>
+
+        <h3>Ingredients</h3>
+        <p id="dlgIngredients"></p>
+        <p class="allergens" id="dlgAllergens"></p>
+
+        <div id="dlgSizesWrap">
+          <h3>Choose a size</h3>
+          <div class="chips" id="dlgSizes"></div>
+        </div>
+
+        <div id="dlgAddonsWrap">
+          <h3>Add-ons</h3>
+          <div class="addon-list" id="dlgAddons"></div>
+        </div>
+
+        <div id="dlgNoteWrap">
+          <h3>Special requests</h3>
+          <textarea class="note" id="dlgNote" maxlength="140" aria-label="Special requests"></textarea>
+        </div>
+
+        <div class="dialog-footer">
+          <div class="qty" id="dlgQtyBox">
+            <button type="button" id="dlgMinus" aria-label="Decrease quantity">&minus;</button>
+            <span id="dlgQty">1</span>
+            <button type="button" id="dlgPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn" id="dlgAdd">Add to cart</button>
+        </div>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafe@gmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
+
+</body>
+</html>

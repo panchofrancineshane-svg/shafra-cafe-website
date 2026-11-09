@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Best Sellers</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="best-sellers">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png"/>
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html" class="active">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Best Sellers</h1>
+                <div class="card sm">
+                    <header>
+                        <h2>Filters</h2>
+                        <div id="f">
+                            <button class="fb" data-t="today">Today</button>
+                            <button class="fb on" data-t="week">This Week</button>
+                            <button class="fb on" data-c="All">All</button>
+                            <button class="fb" data-c="Drinks">Drinks</button>
+                            <button class="fb" data-c="Pastry">Pastry</button>
+                        </div>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Item</th>
+                                <th>Category</th>
+                                <th>Item Sold</th>
+                                <th>Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

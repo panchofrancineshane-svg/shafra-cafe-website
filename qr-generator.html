@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | QR Generator</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="qr-generator">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png"/>
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html">Orders</a>
+                <a href="qr-generator.html" class="active">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>QR Generator</h1>
+                <div class="qrwrap">
+                    <div class="qrcard">
+                        <dl>
+                            <div>
+                                <dt>ORDER ID</dt>
+                                <dd>4769</dd>
+                            </div>
+                            <div>
+                                <dt>CUSTOMER</dt>
+                                <dd>JCGA</dd>
+                            </div>
+                            <div>
+                                <dt>PLATFORM</dt>
+                                <dd>Food Panda</dd>
+                            </div>
+                            <div>
+                                <dt>CURRENT STATUS</dt>
+                                <dd id="status">Preparing</dd>
+                            </div>
+                        </dl>
+                        <div class="qrbox" id="qr"></div>
+                        <small>
+                            Please Scan The QR Code To
+                            <br />
+                            Confirm Pick up
+                        </small>
+                    </div>
+                    <div>
+                        <label class="lbl" for="manualId">Manual Entry</label>
+                        <input class="field" id="manualId" placeholder="Order ID e.g. 4769" />
+                        <label class="lbl" for="action">Action</label>
+                        <select class="field" id="action">
+                            <option>Mark As Being Prepared</option>
+                            <option>Mark As Ready for Pick-up</option>
+                            <option>Mark As Done</option>
+                            <option>Mark As Dropped</option>
+                        </select>
+                        <button class="btn" id="processButton">Process Manually</button>
+                        <p class="msg" id="message"></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

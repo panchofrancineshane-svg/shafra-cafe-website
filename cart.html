@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Shafra Cafe</title>
+  <meta name="description" content="Review your order at Shafra Cafe.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/menu-data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="beans.html">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link active" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      
+      <a href="account.html" id="accountLink" class="nav-login">Log in</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Your cart</h1>
+      <p>Check your order, then place it. You pay at the counter.</p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div id="cartEmpty" class="empty-state" hidden>
+          <h2>Your cart is empty</h2>
+          <p>Browse the menu and tap anything you like to add it.</p>
+          <a href="menu.html" class="btn">Browse the menu</a>
+        </div>
+
+        <div id="cartFull" class="cart-layout">
+          <div id="cartItems"></div>
+
+          <aside class="cart-summary">
+            <h2>Order summary</h2>
+            <div class="summary-row"><span>Subtotal</span><span id="subtotal">&#8369;0</span></div>
+            <div class="summary-row"><span><span class="bean-icon" aria-hidden="true"></span>Beans you will
+                earn</span><span id="cartBeans">+0</span></div>
+            <div class="summary-row summary-total"><span>Total</span><span id="total">&#8369;0</span></div>
+            <p class="small-note">Beans are added once you receive your order.</p>
+
+            <label for="orderOption">How would you like your order?</label>
+            <select id="orderOption" class="select">
+              <option>Pick up</option>
+              <option>Dine in</option>
+            </select>
+
+            <button type="button" class="btn" id="placeOrder">Place order</button>
+            <p class="form-message error" id="cartMessage" hidden></p>
+            <p class="small-note" id="loginHint">You will be asked to log in or sign up before your order is placed.</p>
+          </aside>
+        </div>
+
+        <div id="orderDone" class="empty-state" hidden>
+          <h2>Order placed &#127881;</h2>
+          <p id="doneText"></p>
+          <a href="track.html" class="btn" id="trackLink">Track my order</a>
+          <a href="account.html" class="btn btn-outline">View my orders</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafegmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
+
+</body>
+</html>

@@ -1,201 +1,286 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shafra Cafe | Home</title>
+  <meta name="description" content="A cozy neighborhood cafe serving fresh coffee and pastries daily.">
 
-    <title>Shafra Café | System Access Portal</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #02060d;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 950px;
-            text-align: center;
-        }
-
-        .logo {
-            color: #d9b77c;
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #91a0ae;
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin-bottom: 55px;
-        }
-
-        .heading h1 {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .heading p {
-            color: #aab5c0;
-            font-size: 15px;
-            margin-bottom: 45px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: #0b1521;
-            border: 1px solid #203344;
-            border-radius: 15px;
-            padding: 40px 30px;
-            transition: 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #d9b77c;
-            box-shadow: 0 0 25px rgba(217, 183, 124, 0.15);
-        }
-
-        .icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .card h2 {
-            font-size: 23px;
-            margin-bottom: 15px;
-            color: #d9b77c;
-        }
-
-        .card p {
-            color: #aab5c0;
-            font-size: 14px;
-            line-height: 1.7;
-            min-height: 48px;
-            margin-bottom: 28px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #183b36;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #246056;
-            box-shadow: 0 0 15px rgba(49, 170, 169, 0.3);
-        }
-
-        footer {
-            margin-top: 55px;
-            color: #657586;
-            font-size: 12px;
-        }
-
-        @media (max-width: 650px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .heading h1 {
-                font-size: 28px;
-            }
-
-            .card {
-                padding: 35px 20px;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/menu-data.js" defer></script>
+  <script src="js/item-modal.js" defer></script>
+  <script src="js/reviews.js" defer></script>
 </head>
 
 <body>
 
-    <main class="container">
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="beans.html">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      <a href="account.html" id="accountLink" class="nav-login">Log in</a>
+    </div>
+  </nav>
 
-        <!-- HEADER -->
-        <header>
-            <div class="logo">SHAFRA CAFÉ</div>
-            <div class="subtitle">SYSTEM ACCESS PORTAL</div>
-        </header>
+  <main>
 
-        <!-- WELCOME SECTION -->
-        <section class="heading">
-            <h1>Welcome to Shafra Café</h1>
-            <p>Please select the system you want to access.</p>
-        </section>
+    <!-- 1. HERO: welcome message -->
+    <header class="hero">
+      <div>
+        <p class="tagline">Fresh brewed daily</p>
+        <h1>Your daily cup of comfort</h1>
+        <p>Come in, slow down, stay a while.</p>
+        <a href="menu.html" class="btn">See the menu</a>
+        <a href="offers.html" class="btn btn-outline">View offers</a>
+      </div>
+    </header>
 
-        <!-- SYSTEM ACCESS CARDS -->
-        <section class="cards">
+    <!-- 2. LIMITED OFFER BANNER -->
+    <section>
+      <div class="container">
+        <div class="offer-banner">
+          <img src="images/Autumn Drink.jfif" alt="Pumpkin spice latte topped with cinnamon">
+          <div class="text">
+            <span class="badge">Limited time</span>
+            <h2>Pumpkin Spice Latte</h2>
+            <p>Our autumn favorite is back, with real pumpkin and warm spices. Only until November 30.</p>
+            <a href="offers.html" class="btn">View limited offers</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- CUSTOMER SIDE -->
-            <div class="card">
-                <div class="icon">☕</div>
+    <!-- 3. QUICK INFO -->
+    <section style="padding-top:0;">
+      <div class="container info-grid">
+        <div class="info-card">
+          <div class="icon">&#128338;</div>
+          <h3>Open:</h3>
+          <div>
+            <h3>Weekdays</h3>
+            <p>8:00 AM</p>
+            <h3>Weekends</h3>
+            <p>10:00 AM</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon">&#128205;</div>
+          <h3>Find us</h3>
+          <p>
+            San Isidro, Tarlac City<br>
+            Capas, Tarlac City<br>
+            Paniqui, Tarlac City
+          </p>
+          <a href="contact.html">Get directions</a>
+        </div>
+        <div class="info-card">
+          <div class="icon">&#128246;</div>
+          <h3>Stay a while</h3>
+          <p>Free Wi-Fi and plenty of outlets</p>
+        </div>
+      </div>
+    </section>
 
-                <h2>Customer Side</h2>
+    <!-- 4. SIGNATURE ITEMS -->
+    <section style="padding-top:0;">
+      <div class="container">
+        <h2>Customer favorites</h2>
+        <div class="cards">
 
-                <p>
-                    Explore our café menu, discover your favorites,
-                    and place your orders.
-                </p>
-
-                <a href="./CUSTOMER/" class="btn">
-                    Visit Customer Side →
-                </a>
+          <article class="card" data-id="caramel-latte" tabindex="0" role="button" aria-label="View details for Caramel Latte">
+            <span class="ribbon">Best seller</span>
+            <div class="img-wrap"><img src="images/caramel latte.jpg" alt="Caramel latte"></div>
+            <div class="body">
+              <h3>Caramel Latte</h3>
+              <p>Espresso, steamed milk and house-made caramel.</p>
+              <p class="price">&#8369;145</p>
+              <span class="view-hint">Tap for details &amp; add to cart</span>
             </div>
+          </article>
 
-            <!-- EMPLOYEE SIDE -->
-            <div class="card">
-                <div class="icon">🤵🏻‍♂️</div>
-
-                <h2>Employee Side</h2>
-
-                <p>
-                    Access employee features, manage customer orders,
-                    and assist with café operations.
-                </p>
-
-                <a href="./EMPLOYEE/" class="btn">
-                    Visit Employee Side →
-                </a>
+          <article class="card" data-id="butter-croissant" tabindex="0" role="button" aria-label="View details for Butter Croissant">
+            <div class="img-wrap"><img src="images/butter croissant.jpg" alt="Butter croissant"></div>
+            <div class="body">
+              <h3>Butter Croissant</h3>
+              <p>Flaky, golden and baked fresh every morning.</p>
+              <p class="price">&#8369;95</p>
+              <span class="view-hint">Tap for details &amp; add to cart</span>
             </div>
+          </article>
 
-        </section>
+          <article class="card" data-id="maple-cold-brew" tabindex="0" role="button" aria-label="View details for Maple Cold Brew">
+            <span class="ribbon new">New</span>
+            <div class="img-wrap"><img src="images/maple cold brew.jpg" alt="Maple cold brew"></div>
+            <div class="body">
+              <h3>Maple Cold Brew</h3>
+              <p>Slow-steeped cold brew sweetened with maple syrup.</p>
+              <p class="price">&#8369;155</p>
+              <span class="view-hint">Tap for details &amp; add to cart</span>
+            </div>
+          </article>
 
-        <!-- FOOTER -->
-        <footer>
-            © 2026 Shafra Café. All Rights Reserved.
-        </footer>
+        </div>
+        <p style="text-align:center; margin-top:32px;"><a href="menu.html" class="btn btn-outline">See full menu</a></p>
+      </div>
+    </section>
 
-    </main>
+    <!-- 5. OUR STORY TEASER -->
+    <section class="story">
+      <div class="container">
+        <img src="images/cafe.jpg" alt="Inside the cafe, with wooden tables and warm lighting">
+        <div>
+          <p class="tagline">Our story</p>
+          <h2>A small cafe with a big heart</h2>
+          <p>We started with one espresso machine and a simple idea: a place where everyone feels at home.</p>
+          <a href="about.html" class="btn btn-outline">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. REVIEWS -->
+    <section>
+      <div class="container">
+        <h2>What our guests say</h2>
+        <div class="cards" id="reviewCards">
+          <blockquote class="review">
+            <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>"The coziest spot in town. The latte is perfect every time."</p>
+            <p class="name">&mdash; Maria S.</p>
+          </blockquote>
+          <blockquote class="review">
+            <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>"Great for studying. Friendly staff, fast Wi-Fi, and amazing croissants."</p>
+            <p class="name">&mdash; Jon D.</p>
+          </blockquote>
+          <blockquote class="review">
+            <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p>"The seasonal drinks are the best part. I come back every autumn."</p>
+            <p class="name">&mdash; Aira P.</p>
+          </blockquote>
+        </div>
+        <p class="reviews-cta">Ordered from us? <a href="account.html">Log in</a> to leave your own review.</p>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Get offers first</h2>
+        <p>Join our list for seasonal drinks and special deals. No spam, just coffee.</p>
+        <form data-message="Thank you for subscribing!">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-message" hidden></p>
+      </div>
+    </section>
+
+
+    <!-- ITEM DETAILS POP-UP: filled in by js/item-modal.js -->
+    <dialog class="item-dialog" id="itemDialog" aria-labelledby="dlgName">
+      <button type="button" class="dialog-close" id="dlgClose" aria-label="Close">&times;</button>
+      <div class="dialog-img"><img id="dlgImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div>
+      <div class="dialog-body">
+        <p class="until" id="dlgBadge" hidden></p>
+        <h2 id="dlgName"></h2>
+        <p><span class="old-price" id="dlgOld" hidden></span><span class="price" id="dlgPrice"></span></p>
+        <p class="beans-line"><span class="bean-icon" aria-hidden="true"></span><span id="dlgBeans"></span></p>
+        <p id="dlgLong"></p>
+
+        <h3>Ingredients</h3>
+        <p id="dlgIngredients"></p>
+        <p class="allergens" id="dlgAllergens"></p>
+
+        <div id="dlgSizesWrap">
+          <h3>Choose a size</h3>
+          <div class="chips" id="dlgSizes"></div>
+        </div>
+
+        <div id="dlgAddonsWrap">
+          <h3>Add-ons</h3>
+          <div class="addon-list" id="dlgAddons"></div>
+        </div>
+
+        <div id="dlgNoteWrap">
+          <h3>Special requests</h3>
+          <textarea class="note" id="dlgNote" maxlength="140" aria-label="Special requests"></textarea>
+        </div>
+
+        <div class="dialog-footer">
+          <div class="qty" id="dlgQtyBox">
+            <button type="button" id="dlgMinus" aria-label="Decrease quantity">&minus;</button>
+            <span id="dlgQty">1</span>
+            <button type="button" id="dlgPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn" id="dlgAdd">Add to cart</button>
+        </div>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafe@gmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
 
 </body>
 </html>
-
-

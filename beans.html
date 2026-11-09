@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beans | Shafra Cafe</title>
+  <meta name="description" content="Collect beans with every order and unlock the secret menu at Shafra Cafe.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/beans.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo" aria-label="Shafra Cafe home"><img src="images/Shafra-Logo.png" alt="Shafra Cafe logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="beans.html" class="active">Beans <span id="beansCount" class="cart-count" hidden>0</span></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link" aria-label="Cart"><img src="images/icons/cart.svg" alt=""><span id="cartCount" class="cart-count" hidden>0</span></a>
+      <a href="account.html" id="accountLink" class="nav-login">Log in</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <p class="tagline">Shafra Beans</p>
+      <h1>Every order earns beans</h1>
+      <p>Collect beans, build an order streak and unlock our secret menu.</p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- NOT LOGGED IN -->
+        <div id="beansLoggedOut" class="bean-card" style="max-width:560px; margin:0 auto; text-align:center;">
+          <h2>Log in to see your beans</h2>
+          <p style="margin-bottom:20px;">Sign up or log in to start collecting beans with every order.</p>
+          <a href="account.html?next=beans.html" class="btn">Log in or sign up</a>
+        </div>
+
+        <!-- LOGGED IN -->
+        <div id="beansMember" hidden>
+          <div class="bean-cards">
+
+            <div class="bean-card">
+              <p class="label">Your beans</p>
+              <p class="big"><span class="bean-icon large" aria-hidden="true"></span><span id="beanBalance">0</span></p>
+              <p class="small-note"><span id="beanEarned">0</span> earned &middot; <span id="beanSpent">0</span> spent
+              </p>
+            </div>
+
+            <div class="bean-card">
+              <p class="label">Order streak</p>
+              <p class="big"><span id="streakCount">0</span> / 5</p>
+              <div class="streak-dots" id="streakDots" aria-hidden="true"></div>
+              <p class="small-note" id="streakText"></p>
+            </div>
+
+            <div class="bean-card">
+              <p class="label">Secret menu</p>
+              <p class="big" id="secretState">Locked</p>
+              <p class="small-note" id="secretText"></p>
+              <a href="menu.html#secret" class="btn" id="secretLink" style="margin-top:14px;" hidden>Open the secret
+                menu</a>
+            </div>
+
+          </div>
+
+          <h2 style="margin-top:48px;">Your bean activity</h2>
+          <ul class="bean-history" id="beanHistory"></ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section style="background:var(--foam);">
+      <div class="container">
+        <h2 style="text-align:center;">How beans work</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Order</h3>
+            <p>Every drink and pastry shows how many beans it earns, on the menu and in its details.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Receive</h3>
+            <p>When your order arrives and you tap &ldquo;I received my order&rdquo;, the beans are added to your
+              balance.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Unlock and spend</h3>
+            <p>Order successfully 5 times in a row to reveal the secret menu, where treats cost beans, not money.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEANS PER ITEM -->
+    <section>
+      <div class="container">
+        <h2>Beans you earn from each item</h2>
+        <table class="bean-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Beans</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pumpkin Spice Latte</td>
+              <td>Seasonal offer</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+15</td>
+            </tr>
+            <tr>
+              <td>Maple Cold Brew</td>
+              <td>Seasonal offer</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+14</td>
+            </tr>
+            <tr>
+              <td>Coffee + Pastry Combo</td>
+              <td>Seasonal offer</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+18</td>
+            </tr>
+            <tr>
+              <td>Caramel Latte</td>
+              <td>Coffee</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+12</td>
+            </tr>
+            <tr>
+              <td>Oat Milk Flat White</td>
+              <td>Coffee</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+12</td>
+            </tr>
+            <tr>
+              <td>Americano</td>
+              <td>Coffee</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+8</td>
+            </tr>
+            <tr>
+              <td>Matcha Latte</td>
+              <td>Tea</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+14</td>
+            </tr>
+            <tr>
+              <td>Chai Latte</td>
+              <td>Tea</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+11</td>
+            </tr>
+            <tr>
+              <td>Chamomile Honey</td>
+              <td>Tea</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+9</td>
+            </tr>
+            <tr>
+              <td>Butter Croissant</td>
+              <td>Pastry</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+7</td>
+            </tr>
+            <tr>
+              <td>Almond Croissant</td>
+              <td>Pastry</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+9</td>
+            </tr>
+            <tr>
+              <td>Blueberry Muffin</td>
+              <td>Pastry</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+7</td>
+            </tr>
+            <tr>
+              <td>Avocado Toast</td>
+              <td>Meal</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+20</td>
+            </tr>
+            <tr>
+              <td>Chicken Pesto Panini</td>
+              <td>Meal</td>
+              <td><span class="bean-icon" aria-hidden="true"></span>+22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section style="background:var(--foam);">
+      <div class="container" style="max-width:760px;">
+        <h2>The fine print</h2>
+        <ul class="rules">
+          <li>Beans are added when you confirm that you received a paid order.</li>
+          <li>Your streak counts successful orders in a row. Cancelling an order resets the streak to 0.</li>
+          <li>5 successful orders in a row unlock the secret menu. Once unlocked, it stays on your account.</li>
+          <li>Secret menu items can only be bought with beans, never with money.</li>
+          <li>Redeemed rewards do not earn beans and do not count toward your streak.</li>
+          <li>If you cancel a reward before you receive it, your beans are refunded.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Open at:</h3>
+        <p>
+          Weekdays &ndash; 8:00 AM<br>
+          Weekends &ndash; 10:00 AM
+        </p>
+      </div>
+
+      <div>
+        <h3>About Us</h3>
+        <a href="AboutUs.html">Our Story</a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>
+          San Isidro, Tarlac City<br>
+          Capas, Tarlac City<br>
+          Paniqui, Tarlac City
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <a href="09xx xxx xxxx">09xx xxx xxxx</a>
+        <a href="shafra@gmail.com">shafracafe@gmail.com</a>
+
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <a href="">Intagram</a>
+        <a href="">Facebook</a>
+        <a href="">Tiktok</a>
+      </div>
+
+      <p>
+      <p class="copyright">&copy; 2026 Shafra Cafe. All rights reserved.</p>
+      </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Shafra Cafe | Orders</title>        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="orders">
+        <div class="app">
+            <aside class="side">
+                <div class="logo">
+                    <img src="images/shafralogo.png" />
+                    <p>
+                        MANAGEMENT
+                        <br />
+                        PANEL
+                    </p>
+                </div>
+                <small>Operations</small>
+                <a href="orders.html" class="active">Orders</a>
+                <a href="qr-generator.html">QR Generator</a>
+                <small>Catalog</small>
+                <a href="menu-items.html">Menu Items</a>
+                <a href="hidden-menu-items.html">Hidden Menu Items</a>
+                <small>Reports</small>
+                <a href="sales-report.html">Sales Report</a>
+                <a href="best-sellers.html">Best Sellers</a>
+            </aside>
+            <main>
+                <h1>Orders</h1>
+                <div class="stats">
+                    <div class="stat">
+                        <b id="statOpen">0</b>
+                        <span>Being Prepared</span>
+                    </div>
+                    <div class="stat">
+                        <b id="statReady">0</b>
+                        <span>Waiting for Pick-up</span>
+                    </div>
+                    <div class="stat">
+                        <b id="statToday">0</b>
+                        <span>Total Orders Today</span>
+                    </div>
+                    <div class="stat">
+                        <b id="statSales">&#8369;0</b>
+                        <span>Sales Today</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <header>
+                        <h2>Live Orders Queue</h2>
+                        <div class="pills">
+                            <button class="on" data-f="All">All</button>
+                            <button data-f="Pick up">Pick-up</button>
+                            <button data-f="Dine in">Dine-in</button>
+                            <button data-f="Reward">Rewards</button>
+                        </div>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersBody"></tbody>
+                    </table>
+                    <p class="empty" id="ordersEmpty" hidden>No orders yet. Orders placed on the customer website appear here automatically.</p>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
