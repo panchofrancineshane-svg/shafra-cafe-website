@@ -1,24 +1,59 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shafra Café</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafra Café | System Portal</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Welcome to Shafra Café</h1>
+    <header>
+        <h2 class="logo">SHAFRA <span>CAFÉ</span></h2>
+        <p>System Access Portal</p>
+    </header>
 
-    <p>Select which system you want to access:</p>
+    <main class="container">
 
-    <a href="./CUSTOMER/">Customer Side</a>
-    <br><br>
+        <div class="welcome">
+            <h1>Welcome to <span>Shafra Café</span></h1>
+            <p>Please select the system you want to access.</p>
+        </div>
 
-    <a href="./EMPLOYEE/">Employee Side</a>
-    <br><br>
+        <section class="system-container">
 
-    <a href="./MANAGEMENT/">Management Side</a>
+            <div class="system-card">
+                <div class="system-icon">☕</div>
+                <h2>Customer Side</h2>
+                <p>Explore our café menu, discover your favorites, and place your orders.</p>
+                <a href="./CUSTOMER/" class="btn">Visit Customer Side</a>
+            </div>
+
+            <div class="system-card">
+                <div class="system-icon">👨‍🍳</div>
+                <h2>Employee Side</h2>
+                <p>Access employee features and manage customer orders.</p>
+                <a href="./EMPLOYEE/" class="btn">Visit Employee Side</a>
+            </div>
+
+            <div class="system-card">
+                <div class="system-icon">📊</div>
+                <h2>Management Side</h2>
+                <p>Manage café operations, records, and business information.</p>
+                <a href="./MANAGEMENT/" class="btn">Visit Management Side</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Shafra Café. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
-
