@@ -1,0 +1,156 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #02060d;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #d6a76c;
+}
+
+header p {
+    color: #a6a6a6;
+    margin-top: 8px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.welcome h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.welcome h1 span {
+    color: #d6a76c;
+}
+
+.welcome p {
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+/* SYSTEM CARDS */
+.system-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.system-card {
+    background: #0b1420;
+    border: 1px solid rgba(214, 167, 108, 0.25);
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.system-card:hover {
+    transform: translateY(-8px);
+    border-color: #d6a76c;
+    box-shadow: 0 0 25px rgba(214, 167, 108, 0.2);
+}
+
+.system-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.system-card h2 {
+    color: #d6a76c;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.system-card p {
+    color: #b5b5b5;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 72px;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #02060d;
+    background: #d6a76c;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #f1c58f;
+    box-shadow: 0 0 18px rgba(214, 167, 108, 0.5);
+    transform: scale(1.04);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #777777;
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .system-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .system-container {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 40px 0;
+    }
+}
