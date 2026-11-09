@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management Dashboard | Shafra Café</title>
+
+    <title>Shafra Café | System Access Portal</title>
 
     <style>
         * {
@@ -15,220 +16,120 @@
         }
 
         body {
-            background: #02060d;
-            color: #f5f5f5;
-            display: flex;
             min-height: 100vh;
+            background: #02060d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
         }
 
-        /* SIDEBAR */
-        .sidebar {
-            width: 250px;
-            background: #080f19;
-            padding: 25px 18px;
-            border-right: 1px solid #1d303d;
-            min-height: 100vh;
+        .container {
+            width: 100%;
+            max-width: 950px;
+            text-align: center;
         }
 
         .logo {
-            font-size: 23px;
-            font-weight: bold;
             color: #d9b77c;
-            margin-bottom: 8px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            color: #8998a8;
-            font-size: 12px;
-            margin-bottom: 40px;
-        }
-
-        .menu-title {
-            color: #718394;
-            font-size: 11px;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: #bdc8d2;
-            text-decoration: none;
-            padding: 13px 15px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover,
-        .sidebar a.active {
-            background: #183b36;
-            color: #ffffff;
-        }
-
-        .sidebar .back {
-            margin-top: 35px;
-            border-top: 1px solid #263744;
-            padding-top: 20px;
-            border-radius: 0;
-        }
-
-        /* MAIN CONTENT */
-        .main {
-            flex: 1;
-            padding: 35px;
-            min-width: 0;
-        }
-
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 35px;
-        }
-
-        .topbar h1 {
-            font-size: 27px;
-        }
-
-        .topbar p {
             color: #91a0ae;
-            margin-top: 7px;
-            font-size: 14px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 55px;
         }
 
-        .admin {
-            background: #101d29;
-            border: 1px solid #263b4c;
-            padding: 12px 18px;
-            border-radius: 10px;
-            color: #d9b77c;
+        .heading h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
         }
 
-        /* SUMMARY CARDS */
-        .section-title {
-            margin-bottom: 18px;
-            font-size: 19px;
+        .heading p {
+            color: #aab5c0;
+            font-size: 15px;
+            margin-bottom: 45px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-bottom: 35px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
         .card {
             background: #0b1521;
-            border: 1px solid #1c3544;
-            border-radius: 12px;
-            padding: 22px;
-            transition: 0.3s;
+            border: 1px solid #203344;
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: 0.3s ease;
         }
 
         .card:hover {
+            transform: translateY(-7px);
             border-color: #d9b77c;
-            box-shadow: 0 0 15px rgba(217, 183, 124, 0.12);
+            box-shadow: 0 0 25px rgba(217, 183, 124, 0.15);
         }
 
-        .card .icon {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 13px;
-            color: #9cabb8;
-            font-weight: normal;
-            margin-bottom: 12px;
-        }
-
-        .card .number {
-            font-size: 27px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .card small {
-            display: block;
-            color: #718394;
-            margin-top: 8px;
-        }
-
-        /* ACCESS SECTION */
-        .access-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .access-card {
-            background: #0b1521;
-            border: 1px solid #1c3544;
-            padding: 25px;
-            border-radius: 12px;
-        }
-
-        .access-card h3 {
-            color: #d9b77c;
-            margin-bottom: 12px;
-        }
-
-        .access-card p {
-            color: #9cabb8;
-            line-height: 1.6;
-            font-size: 14px;
+        .icon {
+            font-size: 48px;
             margin-bottom: 20px;
         }
 
-        .access-card a {
+        .card h2 {
+            font-size: 23px;
+            margin-bottom: 15px;
+            color: #d9b77c;
+        }
+
+        .card p {
+            color: #aab5c0;
+            font-size: 14px;
+            line-height: 1.7;
+            min-height: 48px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
             display: inline-block;
-            padding: 11px 18px;
             background: #183b36;
-            color: white;
+            color: #ffffff;
             text-decoration: none;
+            padding: 13px 25px;
             border-radius: 7px;
-            transition: 0.3s;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
-        .access-card a:hover {
+        .btn:hover {
             background: #246056;
-            box-shadow: 0 0 12px rgba(49, 170, 169, 0.3);
+            box-shadow: 0 0 15px rgba(49, 170, 169, 0.3);
         }
 
-        .footer {
+        footer {
+            margin-top: 55px;
             color: #657586;
             font-size: 12px;
-            margin-top: 45px;
-            text-align: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 1000px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 650px) {
-            body {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                min-height: auto;
-            }
-
-            .main {
-                padding: 22px;
-            }
-
-            .access-grid,
             .cards {
                 grid-template-columns: 1fr;
+            }
+
+            .heading h1 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 35px 20px;
             }
         }
     </style>
@@ -236,138 +137,65 @@
 
 <body>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <main class="container">
 
-        <div class="logo">SHAFRA CAFÉ</div>
-        <div class="subtitle">Management System</div>
-
-        <div class="menu-title">MAIN MENU</div>
-
-        <a href="#dashboard" class="active">▦ Dashboard</a>
-        <a href="#overview">▤ Overview</a>
-        <a href="#access">⇄ System Access</a>
-
-        <div class="menu-title" style="margin-top: 30px;">
-            SYSTEM
-        </div>
-
-        <a href="../CUSTOMER/index.html">☕ Customer Side</a>
-        <a href="../EMPLOYEE/index.html">♙ Employee Side</a>
-
-        <a href="../index.html" class="back">← Back to Main Portal</a>
-
-    </aside>
-
-
-    <!-- MAIN CONTENT -->
-    <main class="main" id="dashboard">
-
-        <header class="topbar">
-
-            <div>
-                <h1>Management Dashboard</h1>
-                <p>Welcome to the Shafra Café Management System.</p>
-            </div>
-
-            <div class="admin">
-                Administrator
-            </div>
-
+        <!-- HEADER -->
+        <header>
+            <div class="logo">SHAFRA CAFÉ</div>
+            <div class="subtitle">SYSTEM ACCESS PORTAL</div>
         </header>
 
+        <!-- WELCOME SECTION -->
+        <section class="heading">
+            <h1>Welcome to Shafra Café</h1>
+            <p>Please select the system you want to access.</p>
+        </section>
 
-        <!-- OVERVIEW -->
-        <section id="overview">
+        <!-- SYSTEM ACCESS CARDS -->
+        <section class="cards">
 
-            <h2 class="section-title">System Overview</h2>
+            <!-- CUSTOMER SIDE -->
+            <div class="card">
+                <div class="icon">☕</div>
 
-            <div class="cards">
+                <h2>Customer Side</h2>
 
-                <div class="card">
-                    <div class="icon">🛒</div>
-                    <h3>Customer Orders</h3>
-                    <div class="number">—</div>
-                    <small>Connect order database</small>
-                </div>
+                <p>
+                    Explore our café menu, discover your favorites,
+                    and place your orders.
+                </p>
 
-                <div class="card">
-                    <div class="icon">👥</div>
-                    <h3>Registered Customers</h3>
-                    <div class="number">—</div>
-                    <small>Connect customer database</small>
-                </div>
+                <a href="./CUSTOMER/" class="btn">
+                    Visit Customer Side →
+                </a>
+            </div>
 
-                <div class="card">
-                    <div class="icon">♙</div>
-                    <h3>Employees</h3>
-                    <div class="number">—</div>
-                    <small>Connect employee database</small>
-                </div>
+            <!-- EMPLOYEE SIDE -->
+            <div class="card">
+                <div class="icon">👨‍🍳</div>
 
-                <div class="card">
-                    <div class="icon">📊</div>
-                    <h3>Sales Reports</h3>
-                    <div class="number">—</div>
-                    <small>Connect sales records</small>
-                </div>
+                <h2>Employee Side</h2>
 
+                <p>
+                    Access employee features, manage customer orders,
+                    and assist with café operations.
+                </p>
+
+                <a href="./EMPLOYEE/" class="btn">
+                    Visit Employee Side →
+                </a>
             </div>
 
         </section>
 
-
-        <!-- SYSTEM ACCESS -->
-        <section id="access">
-
-            <h2 class="section-title">System Access</h2>
-
-            <div class="access-grid">
-
-                <div class="access-card">
-
-                    <h3>☕ Customer Management</h3>
-
-                    <p>
-                        Access the customer-facing website to view
-                        the café menu, products, offers, and ordering
-                        interface.
-                    </p>
-
-                    <a href="../CUSTOMER/index.html">
-                        Visit Customer Side →
-                    </a>
-
-                </div>
-
-
-                <div class="access-card">
-
-                    <h3>♙ Employee Management</h3>
-
-                    <p>
-                        Access the employee-facing system to review
-                        the staff interface and order processing
-                        features.
-                    </p>
-
-                    <a href="../EMPLOYEE/index.html">
-                        Visit Employee Side →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <footer class="footer">
-            © 2026 Shafra Café | Management System
+        <!-- FOOTER -->
+        <footer>
+            © 2026 Shafra Café. All Rights Reserved.
         </footer>
 
     </main>
 
 </body>
 </html>
+
 
