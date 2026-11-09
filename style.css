@@ -106,7 +106,7 @@ header p {
     margin-bottom: 25px;
 }
 
-/* BUTTONS */
+
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -134,7 +134,7 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* RESPONSIVE DESIGN */
+
 @media (max-width: 900px) {
     .system-container {
         grid-template-columns: repeat(2, 1fr);
